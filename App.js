@@ -1,28 +1,29 @@
-import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import Button from './src/components/common/Button'
-import Dialog from './src/components/common/Dialog'
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Button from './src/components/common/Button';
+import Dialog from './src/components/common/Dialog';
+import LoginForm from './src/components/Screens/LoginForm';
 
 export default class App extends React.Component {
   state = {
     isModalVisible: false,
-  }
+  };
 
   toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible })
-  }
+    this.setState({ isModalVisible: !this.state.isModalVisible });
+  };
 
   render() {
     return (
       <View style={styles.container}>
-        <Login />
+        <LoginForm />
         <Button title=" Toggle Modal " onClick={this.toggleModal} />
         <Dialog
           isVisible={this.state.isModalVisible}
           onBackdropPress={this.toggleModal}
         />
       </View>
-    )
+    );
   }
 }
 
@@ -32,4 +33,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-})
+});
