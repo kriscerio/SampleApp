@@ -17,7 +17,10 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <LoginForm />
-        <Button title=" Toggle Modal " onClick={this.toggleModal} />
+        <Button 
+          style={{height: 20,width: 40}}
+          title=" !! " 
+          onClick={this.toggleModal} />
         <Dialog
           isVisible={this.state.isModalVisible}
           onBackdropPress={this.toggleModal}
